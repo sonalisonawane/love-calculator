@@ -6,5 +6,5 @@ var percentage = 0;
 btnEl.addEventListener("click", function() {
     let userValueOne = firstPartner.value;
     let userValueTwo = secondPartner.value;
-
-});
+    console.log(userValueOne, userValueTwo)
+})

@@ -18,8 +18,24 @@ body {
 
 .userData {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 50vh;
     width: 100%;
+}
+
+p1.name {
+    font-size: 23px;
+}
+
+input.name-input1,
+input.name-input2 {
+    width: 276px;
+    height: 39px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    box-shadow: 4px 4px 9px black;
+    border-radius: 9px;
 }

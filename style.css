@@ -10,10 +10,14 @@ body {
 
 .container {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background: url("./everton-vila-AsahNlC0VhQ-unsplash.jpg");
     background-position: bottom;
     background-size: cover;
+    align-items: center;
+    justify-content: center;
 }
 
 .userData {
@@ -38,4 +42,13 @@ input.name-input2 {
     font-size: 20px;
     box-shadow: 4px 4px 9px black;
     border-radius: 9px;
+}
+
+button#btn {
+    padding: 10px;
+    width: 120px;
+    font-size: 19px;
+    border-radius: 14px;
+    box-shadow: 5px 4px 8px black;
+    background: lightpink;
 }

@@ -2,15 +2,15 @@ let firstPartner = document.querySelector(".name-input1");
 let secondPartner = document.querySelector(".name-input2");
 let containerEl = document.querySelector(".container");
 let resultsDiv = document.querySelector(".results");
-console.log(containerEl)
+let loveDescription = document.querySelector(".aboutlove");
 let btnEl = document.querySelector("#btn");
 var percentage = 0;
 var score = 0;
 
 
 btnEl.addEventListener("click", function() {
-    let userValueOne = toString(firstPartner.value);
-    let userValueTwo = toString(secondPartner.value);
+    var userValueOne = toString(firstPartner.value);
+    var userValueTwo = toString(secondPartner.value);
     let max = 10;
     let min = 1
     var randomInt = Math.floor(Math.random() * (max - min));
@@ -20,7 +20,7 @@ btnEl.addEventListener("click", function() {
     }
 
     calculation = randomInt * score;
-    if (calculation > 100 || calculation == 0) {
+    if (calculation > 100 || calculation < 20) {
         calculation = 100;
     }
     console.log(randomInt, calculation)
@@ -30,7 +30,21 @@ btnEl.addEventListener("click", function() {
 })
 
 function aboutLove() {
-    alert("sonali")
+    // resultsDiv.innerHTML = "Yours Love is : " + calculation + "%";
+    // var loveDescription = document.createElement("p");
+    // containerEl.appendChild(loveDescription);
+    if (calculation >= 90) {
+        loveDescription.innerHTML = "You Are in extreme love with each other";
+    } else if (calculation >= 80) {
+        loveDescription.innerHTML = "your Love is growing day by day";
+    } else if (calculation >= 50) {
+        loveDescription.innerHTML = "Your Freindship is growing towards love";
+    } else if (calculation > 20) {
+        loveDescription.innerHTML = "You may need to spend some time with each other";
+    } else {
+        loveDescription.innerHTML = "You need more attention towards your relationship"
+    }
+
 }
 
 function clearResults() {
@@ -43,6 +57,7 @@ function clearResults() {
     newBtn.innerHTML = "Try Again !"
     newBtn.addEventListener("click", function() { // <== After clicking on try Again button
         resultsDiv.innerHTML = "";
+        loveDescription.innerHTML = "";
         containerEl.removeChild(newBtn);
         calculation = 0;
     })

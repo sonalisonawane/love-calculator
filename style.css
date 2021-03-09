@@ -51,6 +51,7 @@ input.name-input2 {
     font-size: 20px;
     box-shadow: 4px 4px 9px black;
     border-radius: 9px;
+    color: white;
 }
 
 button#btn {

@@ -24,7 +24,8 @@ btnEl.addEventListener("click", function() {
         calculation = 100;
     }
     console.log(randomInt, calculation)
-    resultsDiv.innerHTML = "Yours Love is : " + calculation + "%";
+    resultsDiv.innerHTML = "Yours Love is  " + calculation + "%";
+    resultsDiv.classList.add("results-js")
     aboutLove();
     clearResults();
 })
@@ -34,15 +35,15 @@ function aboutLove() {
     // var loveDescription = document.createElement("p");
     // containerEl.appendChild(loveDescription);
     if (calculation >= 90) {
-        loveDescription.innerHTML = "You Are in extreme love with each other";
+        loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value} You Are in extreme love with each other`;
     } else if (calculation >= 80) {
-        loveDescription.innerHTML = "your Love is growing day by day";
+        loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value}  your Love is growing day by day`;
     } else if (calculation >= 50) {
-        loveDescription.innerHTML = "Your Freindship is growing towards love";
+        loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value} Your Freindship is growing towards love`;
     } else if (calculation > 20) {
-        loveDescription.innerHTML = "You may need to spend some time with each other";
+        loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value} You may need to spend some time with each other`;
     } else {
-        loveDescription.innerHTML = "You need more attention towards your relationship"
+        loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value} You need more attention towards your relationship`
     }
 
 }
@@ -57,8 +58,10 @@ function clearResults() {
     newBtn.innerHTML = "Try Again !"
     newBtn.addEventListener("click", function() { // <== After clicking on try Again button
         resultsDiv.innerHTML = "";
+        resultsDiv.classList.remove("results-js");
         loveDescription.innerHTML = "";
         containerEl.removeChild(newBtn);
+
         calculation = 0;
     })
 }

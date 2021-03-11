@@ -1,12 +1,19 @@
 let firstPartner = document.querySelector(".name-input1");
 let secondPartner = document.querySelector(".name-input2");
 let containerEl = document.querySelector(".container");
+let loaderEl = document.querySelector("#loader")
 let resultsDiv = document.querySelector(".results");
 let loveDescription = document.querySelector(".aboutlove");
 let btnEl = document.querySelector("#btn");
 var percentage = 0;
 var score = 0;
 
+window.onload = function(e) {
+    setTimeout(function() {
+        containerEl.style.display = "flex";
+        loaderEl.style.display = "none";
+    }, 6000)
+}
 
 btnEl.addEventListener("click", function() {
     var userValueOne = toString(firstPartner.value);

@@ -53,7 +53,10 @@
         align-items: center;
         height: 25vh;
         width: 100%;
-        margin-top: 38px;
+    }
+    
+    audio {
+        display: none;
     }
     
     p1.name {
@@ -136,6 +139,17 @@
         letter-spacing: 3px;
         text-shadow: 2px 5px 3px black;
     }
+    
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+    
+    .attribution a {
+        color: hsl(228, 45%, 44%);
+    }
     /* Responsive Style */
     
     @media screen and (max-width: 480px) {
@@ -169,5 +183,13 @@
         #loader h1 {
             font-size: 27px;
             padding: 9px;
+        }
+        .results-js {
+            height: 150px;
+            width: 150px;
+            padding: 26px;
+        }
+        .tryAgainbtn {
+            margin-top: 6px;
         }
     }

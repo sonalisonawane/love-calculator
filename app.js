@@ -4,6 +4,9 @@ let containerEl = document.querySelector(".container");
 let loaderEl = document.querySelector("#loader")
 let resultsDiv = document.querySelector(".results");
 let loveDescription = document.querySelector(".aboutlove");
+let audioEl = document.querySelector("audio");
+let headingEl = document.querySelector(".heading");
+console.log(headingEl);
 let btnEl = document.querySelector("#btn");
 var percentage = 0;
 var score = 0;
@@ -16,6 +19,8 @@ window.onload = function(e) {
 }
 
 btnEl.addEventListener("click", function() {
+
+    audioEl.play();
     var userValueOne = toString(firstPartner.value);
     var userValueTwo = toString(secondPartner.value);
     let max = 10;
@@ -60,14 +65,15 @@ function clearResults() {
     secondPartner.value = "";
     calculation = 0;
     let newBtn = document.createElement("button"); // for try Again 
-    containerEl.appendChild(newBtn);
+    headingEl.appendChild(newBtn);
     newBtn.classList.add("tryAgainbtn"); //adding styles to button
     newBtn.innerHTML = "Try Again !"
     newBtn.addEventListener("click", function() { // <== After clicking on try Again button
         resultsDiv.innerHTML = "";
         resultsDiv.classList.remove("results-js");
         loveDescription.innerHTML = "";
-        containerEl.removeChild(newBtn);
+        headingEl.removeChild(newBtn);
+        audioEl.pause();
 
         calculation = 0;
     })

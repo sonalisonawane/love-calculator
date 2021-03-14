@@ -11,41 +11,40 @@ let btnEl = document.querySelector("#btn");
 var percentage = 0;
 var score = 0;
 
+// preloader function
 window.onload = function(e) {
-    setTimeout(function() {
-        containerEl.style.display = "flex";
-        loaderEl.style.display = "none";
-    }, 6000)
-}
-
+        setTimeout(function() {
+            containerEl.style.display = "flex";
+            loaderEl.style.display = "none";
+        }, 6000)
+    }
+    // on calculate button click
 btnEl.addEventListener("click", function() {
 
-    audioEl.play();
-    var userValueOne = toString(firstPartner.value);
-    var userValueTwo = toString(secondPartner.value);
-    let max = 10;
-    let min = 1
-    var randomInt = Math.floor(Math.random() * (max - min));
+        audioEl.play();
+        var userValueOne = toString(firstPartner.value);
+        var userValueTwo = toString(secondPartner.value);
+        let max = 10;
+        let min = 1
+        var randomInt = Math.floor(Math.random() * (max - min));
 
-    if (userValueOne.length === userValueTwo.length) {
-        score += 5;
-    }
+        if (userValueOne.length === userValueTwo.length) {
+            score += 5;
+        }
 
-    calculation = randomInt * score;
-    if (calculation > 100 || calculation < 20) {
-        calculation = 100;
-    }
-    console.log(randomInt, calculation)
-    resultsDiv.innerHTML = "Yours Love is  " + calculation + "%";
-    resultsDiv.classList.add("results-js")
-    aboutLove();
-    clearResults();
-})
-
+        calculation = randomInt * score;
+        if (calculation > 100 || calculation < 20) {
+            calculation = 100;
+        }
+        console.log(randomInt, calculation)
+        resultsDiv.innerHTML = "Yours Love is  " + calculation + "%";
+        resultsDiv.classList.add("results-js")
+        aboutLove();
+        clearResults();
+    })
+    // description on percentage
 function aboutLove() {
-    // resultsDiv.innerHTML = "Yours Love is : " + calculation + "%";
-    // var loveDescription = document.createElement("p");
-    // containerEl.appendChild(loveDescription);
+
     if (calculation >= 90) {
         loveDescription.innerHTML = `${firstPartner.value }  and  ${secondPartner.value} You Are in extreme love with each other`;
     } else if (calculation >= 80) {
@@ -59,7 +58,7 @@ function aboutLove() {
     }
 
 }
-
+// clear all the results
 function clearResults() {
     firstPartner.value = "";
     secondPartner.value = "";
